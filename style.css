@@ -1,0 +1,195 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+/* 模式选择器 */
+.mode-selector {
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.mode-selector h2 {
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+.mode-selector p {
+    color: #555;
+    margin-bottom: 15px;
+    min-height: 24px;
+}
+
+#mode-btn {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#mode-btn:hover {
+    background-color: #1565c0;
+}
+
+/* 练习显示区域 */
+.display {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#question {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 40px;
+    font-weight: bold;
+}
+
+#user-input {
+    font-size: 24px;
+    color: #4a90e2;
+    min-height: 36px;
+}
+
+/* 键盘样式 */
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 4px;
+    margin: 20px 0;
+}
+
+.key {
+    background-color: #f8f9fa;
+    border: 1px solid #adb5bd;
+    border-radius: 4px;
+    padding: 8px 2px;
+    text-align: center;
+    font-weight: bold;
+    cursor: default;
+    transition: all 0.1s;
+    min-height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.key.pressed {
+    background-color: #4a90e2;
+    color: white;
+    transform: translateY(1px);
+    border-color: #357abd;
+}
+
+.key.highlight {
+    background-color: #ffd43b;
+    border-color: #fcc419;
+    box-shadow: 0 0 5px rgba(255, 212, 59, 0.8);
+}
+
+.key.special {
+    background-color: #ffd43b;
+}
+
+.key.space {
+    grid-column: span 4;
+    font-size: 12px;
+}
+
+/* 控制按钮 */
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+/* 统计信息 */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .keyboard {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .key {
+        min-height: 35px;
+        padding: 3px 1px;
+        font-size: 8px;
+    }
+    
+    .key.space {
+        grid-column: span 3;
+        font-size: 7px;
+    }
+    
+    #question {
+        font-size: 20px;
+    }
+    
+    #user-input {
+        font-size: 18px;
+    }
+}
